@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UsuariosAPI.Models;
+using UsuariosApi.Models;
 
 namespace UsuariosAPI.Data.Dtos
 {

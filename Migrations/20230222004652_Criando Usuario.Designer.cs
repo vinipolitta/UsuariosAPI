@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UsuariosAPI.Data.Dtos;
+using UsuariosApi.Data;
 
 #nullable disable
 
-namespace UsuariosAPI.Migrations
+namespace UsuariosApi.Migrations
 {
     [DbContext(typeof(UsuarioDbContext))]
-    [Migration("20230922103707_Criando Usuario")]
+    [Migration("20230222004652_Criando Usuario")]
     partial class CriandoUsuario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,7 +149,7 @@ namespace UsuariosAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("UsuariosAPI.Models.Usuario", b =>
+            modelBuilder.Entity("UsuariosApi.Models.Usuario", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -227,7 +227,7 @@ namespace UsuariosAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("UsuariosAPI.Models.Usuario", null)
+                    b.HasOne("UsuariosApi.Models.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -236,7 +236,7 @@ namespace UsuariosAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("UsuariosAPI.Models.Usuario", null)
+                    b.HasOne("UsuariosApi.Models.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -251,7 +251,7 @@ namespace UsuariosAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("UsuariosAPI.Models.Usuario", null)
+                    b.HasOne("UsuariosApi.Models.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -260,7 +260,7 @@ namespace UsuariosAPI.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("UsuariosAPI.Models.Usuario", null)
+                    b.HasOne("UsuariosApi.Models.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
